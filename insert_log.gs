@@ -2,7 +2,8 @@ function onEdit(e) {
   var user = Session.getActiveUser().getEmail();
 
   var ss = SpreadsheetApp.getActiveSpreadsheet(); //現在触っているファイルを取得
-  var sheet = ss.getSheetByName('シート1'); //対象のシート名を選択(シート1の部分にシート名記載)
+//  var sheet = ss.getSheetByName('会員'); //対象のシート名を選択(シート1の部分にシート名記載)
+  var sheet = ss.getActiveSheet() //アクティブなシートを選択
   var currentRow = sheet.getActiveCell().getRow(); //アクティブなセルの行番号を取得
   var currentCol = sheet.getActiveCell().getColumn(); //アクティブなセルの列番号を取得
   var currentCell = sheet.getActiveCell().getValue(); //アクティブなセルの入力値を取得
@@ -25,3 +26,6 @@ function onEdit(e) {
     }
   }
 }
+
+
+
